@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="css/tab.css">
+</head>
+<body>
+
+    <div class="wrapper" id="wrapper">
+        <ul class="tab" id="tab-menu">
+            <li class="tab-item active">选项卡1<span>|</span></li>
+            <li class="tab-item">选项卡2<span>|</span></li>
+            <li class="tab-item">选项卡3<span>|</span></li>
+            <li class="tab-item">选项卡4</li>
+        </ul>
+        <div class="products" id="tab-main">
+            <div class="main selected">
+                <a href="###"><img src="imgs/ban01.jpg" alt=""/></a>
+            </div>
+            <div class="main">
+                <a href="###"><img src="imgs/ban02.jpg" alt=""/></a>
+            </div>
+            <div class="main">
+                <a href="###"><img src="imgs/ban03.jpg" alt=""/></a>
+            </div>
+            <div class="main">
+                <a href="###"><img src="imgs/ban04.jpg" alt=""/></a>
+            </div>
+        </div>
+    </div>
+
+    <script type="text/javascript" src="js/tab.js"></script>
+    <script type="text/javascript">
+        // 思路:
+        // 1 获取到所有的tab栏菜单,
+        // 2 循环遍历所有的tab栏, 并绑定单击事件, 同时给当前元素来添加index属性
+        // 3 给当前菜单添加类, 然后, 让当前菜单对应的内容展示出来
+
+        //面向过程方式
+        // var tabMenus = document.querySelectorAll(".tab-item");
+        // var tabMains = document.querySelectorAll(".main");
+
+        // for(var i = 0; i < tabMenus.length; i++) {
+        // 		tabMenus[i].index = i;
+        // 		tabMenus[i].onclick = function() {
+        // 			// alert(123);
+        // 			for(var j = 0; j < tabMenus.length; j++) {
+        // 				// 操作类的方式
+        // 				tabMenus[j].className = "tab-item";
+        // 				// 操作样式属性的方式
+        // 				tabMains[j].style.display = "none";
+        // 			}
+
+        // 			// 让当前的展示出来或者是添加类
+        // 			this.className += " active";
+        // 			tabMains[this.index].style.display = "block";
+        // 		};
+        // }
+
+
+
+      //tab.js使用
+      new Tab({
+        tabMenu: "tab-menu",   // 指定tab栏菜单的id
+        tabMain: "tab-main",   // 指定tab栏内容区域的id
+        auto: false,               // 指定是否自动播放
+        tempStep: 1500            // 指定时间间隔
+      })
+    </script>
+</body>
+</html>
